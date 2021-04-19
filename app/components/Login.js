@@ -40,15 +40,14 @@ export default function Login(props) {
             })
             .then((response) => {
             if (!isMounted) return;
-            console.log(response.data.sessionTokenBck);
-            props.setToken(response.data.sessionTokenBck);
-            setLoading(false);
-            setToken(response.data.sessionTokenBck);
-            history.push('/dashboard')
+                props.setToken(response.data.sessionTokenBck);
+                setLoading(false);
+                setToken(response.data.sessionTokenBck);
+                history.push('/dashboard');
             }).catch((error) => {
             if (!isMounted) return;
-            setLoading(false);
-            toastRef.current.show("Credenciales inválidas");
+                setLoading(false);
+                toastRef.current.show("Credenciales inválidas");
             });
         }
 

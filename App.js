@@ -16,7 +16,7 @@ export default function App() {
       <ScrollView>
         <View style={styles.container}>
           <Route exact path="/" component={() => <Login toastRef={toastRef} setToken={setTokenLogin} />} />
-          <Route path="/dashboard" component={() => <Dashboard token={tokenLogin} />} />
+          <Route path="/dashboard" component={() => <Dashboard toastRef={toastRef} token={tokenLogin} />} />
         </View>
         <Divider style={styles.divider}/>
         <Toast
